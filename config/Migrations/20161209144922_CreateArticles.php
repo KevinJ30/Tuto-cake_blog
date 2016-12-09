@@ -38,7 +38,7 @@ class CreateArticles extends AbstractMigration
         ]);
 
         $table->addColumn('category_id', 'integer');
-        
+
         $table->addIndex(['category_id']);
         $table->create();
     }

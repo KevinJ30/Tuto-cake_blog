@@ -1,4 +1,5 @@
 <!-- Layout Front-End -->
+<!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,7 +10,7 @@
 
         <title>Mon Blog</title>
 
-        <?php $this->Html->css('bootstrap.min'); ?>
+        <?= $this->Html->css('bootstrap/bootstrap.min'); ?>
     </head>
     <body>
 
@@ -21,8 +22,7 @@
             <?= $this->fetch('content') ?>
         </div>
 
-        <?php $this->Html->script('jquery.min.js'); ?>
-        <?php $this->Html->script('bootstrap.min.js'); ?>
-        <?php $this->fetch('script'); ?>
+        <?= $this->Html->script('jquery/jquery.min.js'); ?>
+        <?= $this->Html->script('bootstrap/bootstrap.min.js'); ?>
     </body>
 </html>
