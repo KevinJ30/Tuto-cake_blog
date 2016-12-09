@@ -17,6 +17,10 @@
             <h1>Bienvenue sur mon blog</h1>
         </div>
 
+        <div class="container">
+            <?= $this->fetch('content') ?>
+        </div>
+
         <?php $this->Html->script('jquery.min.js'); ?>
         <?php $this->Html->script('bootstrap.min.js'); ?>
         <?php $this->fetch('script'); ?>
