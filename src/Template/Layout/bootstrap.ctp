@@ -11,16 +11,21 @@
     <title>Mon Blog</title>
 
     <?= $this->Html->css('bootstrap/bootstrap.min'); ?>
+    <?= $this->Html->css('design'); ?>
 </head>
 <body>
 
-<div class="container">
-    <h1>Bienvenue sur mon blog</h1>
-</div>
+<header>
+    <h1>StudioDuWeb</h1>
+    <?= $this->Html->image('Logo.png', ['class' => 'logo']) ?>
+</header>
 
 <div class="container">
-    <?= $this->Flash->render(); ?>
-    <?= $this->fetch('content') ?>
+    <?= $this->cell('Categorie') ?>
+    <div class="col-md-10">
+        <?= $this->Flash->render(); ?>
+        <?= $this->fetch('content') ?>
+    </div>
 </div>
 
 <?= $this->Html->script('jquery/jquery.js'); ?>

@@ -13,7 +13,7 @@
                 <th class="text-center">Date de création</th>
                 <th class="text-center">Date de modification</th>
                 <th class="text-center">Publier</th>
-                <th>Actions</th>
+                <th class="text-center">Actions</th>
             </tr>
             <?php if($articles->count()) : ?>
                 <?php foreach($articles as $article) : ?>
@@ -24,7 +24,7 @@
                         <td><?= $article->created->format('dd-mm-yyyy') ?></td>
                         <td><?= $article->modified->format('dd-mm-yyyy') ?></td>
                         <td><?= $article->publish ?></td>
-                        <td>
+                        <td style="width:100px; min-width:100px; max-width:100px;">
                             <?= $this->Html->link('<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>', ['prefix' => 'admin', 'controller' => 'articles', 'action' => 'edit', $article->id], ['escape' => false, 'class' => 'btn btn-sm btn-primary']) ?>
                             <?= $this->Form->postLink('<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>', ['prefix' => 'admin', 'controller' => 'articles', 'action' => 'delete', $article->id], ['confirm' => 'Etes vous sur de vouloir supprimer la catégorie ?', 'class' => 'btn btn-sm btn-danger', 'escape' => false]) ?>
                         </td>

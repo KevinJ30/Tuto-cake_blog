@@ -12,6 +12,7 @@
         <?php foreach($articles as $article) : ?>
             <article>
                 <h1><?= $article->title ?></h1>
+                <p>Crée le : <?= $article->created->format('d-m-Y') ?>, appartient à la catégorie : <?= $article->category->title ?></p>
                 <hr />
                 <p><?= $article->content ?></p>
             </article>

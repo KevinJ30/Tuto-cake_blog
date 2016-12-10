@@ -1,0 +1,18 @@
+header{
+    position:relative;
+    height:80px;
+    background-color:#3da1ff;
+    color:#fff;
+    text-align:center;
+    border-bottom:3px solid #71baff;
+}
+
+header img.logo{
+    width:60px;
+    position:absolute;
+    top: 9px;
+    left: 60px;
+    transform: translateX(-30px);
+}
+
+header h1{  margin: 0;  padding: 0;  line-height:80px;}

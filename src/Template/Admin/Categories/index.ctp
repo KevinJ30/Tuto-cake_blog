@@ -16,7 +16,7 @@
                 <tr>
                     <td><?= $categorie->title ?></td>
                     <td><?= $categorie->description ?></td>
-                    <td>
+                    <td style="width:100px; min-width:100px; max-width:100px;">
                         <?= $this->Html->link('<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>', ['prefix' => 'admin', 'controller' => 'categories', 'action' => 'edit', $categorie->id], ['escape' => false, 'class' => 'btn btn-sm btn-primary']) ?>
                         <?= $this->Form->postLink('<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>', ['prefix' => 'admin', 'controller' => 'categories', 'action' => 'delete', $categorie->id], ['confirm' => 'Etes vous sur de vouloir supprimer la catégorie ?', 'class' => 'btn btn-sm btn-danger', 'escape' => false]) ?>
                     </td>
