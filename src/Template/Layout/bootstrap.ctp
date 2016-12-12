@@ -16,17 +16,31 @@
 <body>
 
 <header>
-    <h1>StudioDuWeb</h1>
-    <?= $this->Html->image('Logo.png', ['class' => 'logo']) ?>
+    <div class="row">
+        <div class="logo">
+            <?= $this->Html->image('Logo.png', ['class' => 'logo']) ?>
+        </div>
+        <div class="title">
+            <h1>StudioDuWeb</h1>
+        </div>
+    </div>
 </header>
 
-<div class="container">
-    <?= $this->cell('Categorie') ?>
-    <div class="col-md-10">
-        <?= $this->Flash->render(); ?>
-        <?= $this->fetch('content') ?>
+<div id="main" class="container">
+    <ddiv class="row">
+        <div class="col-md-3" style="margin-top:1.5em;">
+            <?= $this->cell('Categorie') ?>
+        </div>
+        <div class="col-md-9">
+            <?= $this->Flash->render(); ?>
+            <?= $this->fetch('content') ?>
+        </div>
     </div>
 </div>
+
+<footer class="text-center">
+    <small>Vous-êtes administrateur du blog ?</small>
+</footer>
 
 <?= $this->Html->script('jquery/jquery.js'); ?>
 <?= $this->Html->script('bootstrap/bootstrap.min.js'); ?>

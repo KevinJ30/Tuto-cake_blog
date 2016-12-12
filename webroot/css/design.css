@@ -1,18 +1,58 @@
+body{
+    position:relative;
+    height:100%;
+}
+
 header{
     position:relative;
     height:80px;
     background-color:#3da1ff;
     color:#fff;
-    text-align:center;
     border-bottom:3px solid #71baff;
+    line-height:75px;
+    overflow: hidden;
+}
+
+header .logo{
+    float:left;
+    margin-left:10px;
+    margin-top:5px;
 }
 
 header img.logo{
     width:60px;
-    position:absolute;
-    top: 9px;
-    left: 60px;
-    transform: translateX(-30px);
 }
 
-header h1{  margin: 0;  padding: 0;  line-height:80px;}
+header .title{
+    padding-left:10px;
+    text-align:center;
+}
+
+header h1{  margin: 0;  padding: 0; line-height: 75px;}
+
+/** List Groupe **/
+.list-group-header {
+    border-bottom: 3px solid #71baff;
+    background-color: #3da1ff;
+    color: #fff;
+    font-weight: bold;
+}
+
+#main{
+    margin-bottom:40px;
+}
+
+/** Footer **/
+footer{
+    position:fixed;
+    left: 0;
+    bottom: 0;
+
+    width:100%;
+    height:50px;
+    line-height:50px;
+
+    background-color:#3da1ff;
+    color:#fff;
+}
+
