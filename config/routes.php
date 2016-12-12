@@ -51,6 +51,9 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/', ['controller' => 'Articles', 'action' => 'index']);
 
+    // Inscription sur le site
+    $routes->connect('/inscription', ['prefix' => null, 'controller' => 'Users', 'action' => 'inscription']);
+
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
