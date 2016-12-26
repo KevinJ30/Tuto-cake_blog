@@ -16,18 +16,28 @@
 <body>
 
 <header>
+    <!--<div class="logo">
+        <?= $this->Html->image('Logo.png', ['class' => 'logo']) ?>
+    </div>
+    <div class="title">
+        <h1>StudioDuWeb</h1>
+    </div>
+    <div class="membre">
+        <a href="#">Membre</a>
+    </div>-->
     <div class="row">
-        <div class="logo">
+        <div class="col-sm-1">
             <?= $this->Html->image('Logo.png', ['class' => 'logo']) ?>
         </div>
-        <div class="title">
-            <h1>StudioDuWeb</h1>
+        <div class="col-sm-10">
+            <h1 class="title">StudioDuWeb</h1>
         </div>
     </div>
 </header>
 
 <div id="main" class="container">
-    <ddiv class="row">
+
+    <div class="row">
         <div class="col-md-3" style="margin-top:1.5em;">
             <?= $this->cell('Categorie') ?>
         </div>
@@ -39,7 +49,7 @@
 </div>
 
 <footer class="text-center">
-    <small>Vous-êtes administrateur du blog ?</small>
+    <small><?= $this->Html->link('Vous-êtes administrateur du blog ?', ['prefix' => 'admin', 'controller' => 'dashboard']) ?></small>
 </footer>
 
 <?= $this->Html->script('jquery/jquery.js'); ?>

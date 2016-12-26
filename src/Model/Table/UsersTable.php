@@ -2,7 +2,7 @@
 
 namespace App\Model\Table;
 
-use App\Auth\LegacyPasswordHasher;
+use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
@@ -44,10 +44,10 @@ class UsersTable extends Table{
             ]
         ]);
 
-        $validator->add('password', [
+        $validator->add('confirm-password', [
             'minLength' => [
                 'rule' => ['minLength', 8],
-                'message' => 'Votre identifiant doit contenir au minimum 4 caractères.'
+                'message' => 'Votre mot de passe doit contenir au minimum 8 caractères.'
             ]
         ]);
 
@@ -70,6 +70,12 @@ class UsersTable extends Table{
 
     public function confirmPassword($field, $check){
         return $check['data']['password'] == $field;
+    }
+
+    public function findAuth(Query $query, Array $options){
+        $query->select()
+              ->where(['Users.activated IS NOT' => 'null']);
+        return $query;
     }
 
     public function buildRules(RulesChecker $rules){

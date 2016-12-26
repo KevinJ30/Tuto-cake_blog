@@ -52,29 +52,18 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/', ['controller' => 'Articles', 'action' => 'index']);
 
     // Inscription sur le site
-    $routes->connect('/inscription', ['prefix' => null, 'controller' => 'Users', 'action' => 'inscription']);
+    $routes->connect('/inscription', ['prefix' => false, 'controller' => 'Users', 'action' => 'inscription']);
 
-    /**
-     * ...and connect the rest of 'Pages' controller's URLs.
-     */
-    //$routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+    // Page de connection
+    $routes->connect('/login', ['prefix' => false, 'controller' => 'Users', 'action' => 'login']);
 
-    /**
-     * Connect catchall routes for all controllers.
-     *
-     * Using the argument `DashedRoute`, the `fallbacks` method is a shortcut for
-     *    `$routes->connect('/:controller', ['action' => 'index'], ['routeClass' => 'DashedRoute']);`
-     *    `$routes->connect('/:controller/:action/*', [], ['routeClass' => 'DashedRoute']);`
-     *
-     * Any route class can be used with this method, such as:
-     * - DashedRoute
-     * - InflectedRoute
-     * - Route
-     * - Or your own route class
-     *
-     * You can remove these routes once you've connected the
-     * routes you want in your application.
-     */
+    // Déconection du site
+    $routes->connect('/logout', ['prefix' => false, 'controller' => 'Users', 'action' => 'logout']);
+
+    // Page d'administration
+    $routes->connect('/admin', ['prefix' => 'admin', 'controller' => 'dashboard', 'action' => 'index']);
+
+
     $routes->fallbacks(DashedRoute::class);
 });
 

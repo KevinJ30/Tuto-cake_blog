@@ -50,6 +50,15 @@ class User extends Entity
         return $hasher->hash($password);
     }
 
+    protected function _setTmpPassword($password){
+        if(!empty($password)){
+            $hasher = new LegacyPasswordHasher();
+            return $hasher->hash($password);
+        }
+
+        return $password;
+    }
+
     protected function _setConfirmPassword($password){
         $hasher = new LegacyPasswordHasher();
         return $hasher->hash($password);

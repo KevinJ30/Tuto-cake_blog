@@ -40,6 +40,11 @@ class CreateUsers extends AbstractMigration
         ]);
 
         $table->addColumn('activated', 'datetime', ['null' => true]);
+        $table->addColumn('permission', 'string', [
+            'default' => null,
+            'null' => false,
+            'limit' => 50
+        ]);
 
         $table->create();
     }

@@ -1,6 +1,3 @@
-<style>
-    body
-</style>
 <html>
     <head>
         <style>
@@ -42,7 +39,7 @@
             <div class="col-md-12">
                 <h1 class="title">StudioDuWeb</h1>
                 <div class="content">
-                    <p>Bonjours <?= $username ?>, nous vous remercions de votre inscription sur le site.</p>
+                    <p>Bonjours <?= $user->username ?>, nous vous remercions de votre inscription sur le site.</p>
                     <p>Pour valider votre compte, veuillez cliquer ou copier-coller le lien ci-dessous :</p>
                     <a href="<?= $this->Url->build(['prefix' => null, 'controller' => 'Users', 'action' => 'validate', $user->token, $user->username], true) ?>"><?= $this->Url->build(['prefix' => null, 'controller' => 'Users', 'action' => 'validate', $user->token, $user->username], true) ?></a>
                     <p>Merci de ne pas répondre à cet e-mail.</p>
